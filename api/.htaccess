@@ -12,3 +12,6 @@ RewriteRule ^authors/([^/]+)/poems$ index.php?entity=author&information=poems&na
 # Redirect /authors/<author_name>/poems/<poem_title> 
 # to ?entity=poem&information=text&authorName=<author_name>&title=<poem_title>
 RewriteRule ^authors/([^/]+)/poems/([^/]+)$ index.php?entity=poem&information=text&authorName=$1&title=$2 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

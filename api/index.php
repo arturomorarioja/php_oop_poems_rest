@@ -9,12 +9,15 @@
 
 require_once __DIR__ . '/../classes/utils.php';
 
+header('Content-Type: application/json');
+header('Accept-version: v1');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     Utils::leave(405);
 }
 
 if (!isset($_GET['entity']) || !isset($_GET['information'])) {
-    Utils::leave();
+    echo Utils::addHATEOAS();
 } else {
     http_response_code(200);
 
