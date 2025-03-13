@@ -3,6 +3,7 @@
 RESTful version of the [Poems API](https://github.com/arturomorarioja/php_oop_poems).
 - `.htaccess` redirects the REST endpoints to the former GET parameter based endpoints
 - The API now returns proper HTTP status codes
+- The corresponding Postman collection and environment are included in the repo
 
 ### Main usage
 

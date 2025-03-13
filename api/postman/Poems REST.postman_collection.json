@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "ea7accd0-d494-46d0-aa85-cd426307006c",
+		"name": "Poems REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11087769"
+	},
+	"item": [
+		{
+			"name": "authors Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}",
+					"host": [
+						"{{BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/authors",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authors/<name>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/authors/Emily Dickinson",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"authors",
+						"Emily Dickinson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authors/<name>/poems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/authors/Emily Dickinson/poems",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"authors",
+						"Emily Dickinson",
+						"poems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authors/<name>/poems/<title>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/authors/Emily Dickinson/poems/Because I Could Not Stop for Death",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"authors",
+						"Emily Dickinson",
+						"poems",
+						"Because I Could Not Stop for Death"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					"\r",
+					"pm.test(\"Content-Type is present\", function () {\r",
+					"    pm.response.to.have.header(\"Content-Type\");\r",
+					"});\r",
+					"\r",
+					"pm.test(\"Response time is less than 200ms\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+					"});"
+				]
+			}
+		}
+	]
+}
