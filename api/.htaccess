@@ -4,14 +4,14 @@ RewriteEngine on
 RewriteRule ^authors$ index.php?entity=catalog&information=authors [QSA,L]
 
 # Redirect /authors/<author_name> to ?entity=author&information=info&name=<author_name>
-RewriteRule ^authors/([^/]+)$ index.php?entity=author&information=info&name=$1 [QSA,L]
+RewriteRule ^authors/([^/]+)$ index.php?entity=author&information=info&name=$1 [B,QSA,L]
 
 # Redirect /authors/<author_name>/poems to ?entity=author&information=poems&name=<author_name>
-RewriteRule ^authors/([^/]+)/poems$ index.php?entity=author&information=poems&name=$1 [QSA,L]
+RewriteRule ^authors/([^/]+)/poems$ index.php?entity=author&information=poems&name=$1 [B,QSA,L]
 
 # Redirect /authors/<author_name>/poems/<poem_title> 
 # to ?entity=poem&information=text&authorName=<author_name>&title=<poem_title>
-RewriteRule ^authors/([^/]+)/poems/([^/]+)$ index.php?entity=poem&information=text&authorName=$1&title=$2 [QSA,L]
+RewriteRule ^authors/([^/]+)/poems/([^/]+)$ index.php?entity=poem&information=text&authorName=$1&title=$2 [B,QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
